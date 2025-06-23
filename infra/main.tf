@@ -16,11 +16,16 @@ resource "google_storage_bucket_iam_member" "publicacacess" {
 }
 
 resource "google_storage_bucket_object" "sitesrc" {
-  for_each = fileset("${path.module}/site", "*/")
+  for_each = {
+    for file in fileset("${path.module}/../site", "**/*") :
+    file => file
+    if !endswith(file, "/")
+  }
 
-  name   = each.value
-  source = "${path.module}/site/${each.value}"
+  name   = each.key 
+  source = "${path.module}/../site/${each.key}"
   bucket = google_storage_bucket.cloudexam.name
+
   content_type = lookup({
     html = "text/html"
     css  = "text/css"
@@ -30,23 +35,6 @@ resource "google_storage_bucket_object" "sitesrc" {
     jpeg = "image/jpeg"
     webp = "image/webp"
     gif  = "image/gif"
-  }, lower(regex("\\.([a-z0-9]+)$", each.value)[0]), "application/octet-stream")
-}
-
-resource "google_storage_bucket_object" "index" {
-  name = "index.html"
-  source = "../site/index.html"
-  bucket = google_storage_bucket.cloudexam.name
-}
-
-resource "google_storage_bucket_object" "script" {
-  name = "script.js"
-  source = "../site/script.js"
-  bucket = google_storage_bucket.cloudexam.name
-}
-
-resource "google_storage_bucket_object" "styles" {
-  name = "styles.css"
-  source = "../site/styles.css"
-  bucket = google_storage_bucket.cloudexam.name
+    svg  = "image/svg+xml"
+  }, lower(regex("\\.([a-z0-9]+)$", each.key)[0]), "application/octet-stream")
 }

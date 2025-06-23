@@ -3,5 +3,5 @@
 .terraform*
 *.json
 *.tfstat
-infra/terraform.tfstate.backup
-infra/terraform.tfstate
+*.tfstate.backup
+*.tfstate
