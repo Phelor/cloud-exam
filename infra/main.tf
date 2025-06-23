@@ -1,6 +1,6 @@
 resource "google_storage_bucket" "cloudexam" {
   name = var.bucket_name
-  location = "UE"
+  location = var.gcp_region
 }
 
 resource "google_storage_bucket_object" "sitesrc" {
