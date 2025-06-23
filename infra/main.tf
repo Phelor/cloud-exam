@@ -1,4 +1,5 @@
 resource "google_storage_bucket" "cloudexam" {
+    
   name = var.bucket_name
   location = var.gcp_region
 
@@ -8,14 +9,13 @@ resource "google_storage_bucket" "cloudexam" {
   }
 }
 
-resource "google_storage_object_access_control" "publicacacess" {
-    object = google_storage_bucket_object.sitefiles.name
-    bucket = google_storage_bucket.cloudexam.name
-    role = "READER"
-    entity = "allUsers"
+resource "google_storage_bucket_iam_member" "publicacacess" {
+  bucket = google_storage_bucket.cloudexam.name
+  role   = "roles/storage.objectViewer"
+  member = "allUsers"
 }
 
-resource "google_storage_bucket_object" "sitefiles" {
+resource "google_storage_bucket_object" "sitesrc" {
   for_each = fileset("${path.module}/site", "*/")
 
   name   = each.value
@@ -33,19 +33,19 @@ resource "google_storage_bucket_object" "sitefiles" {
   }, lower(regex("\\.([a-z0-9]+)$", each.value)[0]), "application/octet-stream")
 }
 
-resource "google_storage_bucket_object" "sitesrc" {
+resource "google_storage_bucket_object" "index" {
   name = "index.html"
   source = "../site/index.html"
   bucket = google_storage_bucket.cloudexam.name
 }
 
-resource "google_storage_bucket_object" "sitesrc" {
+resource "google_storage_bucket_object" "script" {
   name = "script.js"
   source = "../site/script.js"
   bucket = google_storage_bucket.cloudexam.name
 }
 
-resource "google_storage_bucket_object" "sitesrc" {
+resource "google_storage_bucket_object" "styles" {
   name = "styles.css"
   source = "../site/styles.css"
   bucket = google_storage_bucket.cloudexam.name
