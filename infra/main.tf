@@ -3,12 +3,19 @@ resource "google_storage_bucket" "cloudexam" {
   location = var.gcp_region
 }
 
-resource "google_storage_bucket_object" "site_files" {
+resource "google_storage_object_access_control" "publicacacess" {
+    object = google_storage_bucket_object.sitefiles.name
+    bucket = google_storage_bucket.cloudexam.name
+    role = "READER"
+    entity = "allUsers"
+}
+
+resource "google_storage_bucket_object" "sitefiles" {
   for_each = fileset("${path.module}/site", "*/")
 
   name   = each.value
   source = "${path.module}/site/${each.value}"
-  bucket = google_storage_bucket.static_site.name
+  bucket = google_storage_bucket.cloudexam.name
   content_type = lookup({
     html = "text/html"
     css  = "text/css"
@@ -16,6 +23,7 @@ resource "google_storage_bucket_object" "site_files" {
     png  = "image/png"
     jpg  = "image/jpeg"
     jpeg = "image/jpeg"
+    webp = "image/webp"
     gif  = "image/gif"
   }, lower(regex("\\.([a-z0-9]+)$", each.value)[0]), "application/octet-stream")
 }
