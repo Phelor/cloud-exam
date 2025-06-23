@@ -1,6 +1,11 @@
 resource "google_storage_bucket" "cloudexam" {
   name = var.bucket_name
   location = var.gcp_region
+
+  website {
+    main_page_suffix = "index.html"
+    not_found_page = "lost.html"
+  }
 }
 
 resource "google_storage_object_access_control" "publicacacess" {
