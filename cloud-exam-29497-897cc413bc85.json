@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cloud-exam-29497",
+  "private_key_id": "897cc413bc85150b0847635336d25ed782a73498",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDPyWs43BT7wI5E\n2gXrfI/RlTqu3Fzxa+TKuO6cOpJEaQEk7pViKkFmdWocxr8gyWwTyPTyT+vfv8PT\nLU5XVlfeo7rNPUwCYvAGB3hdZ6WHUWleng2tPEyvhtpGZ7qshuWBrhc+oJhVddIX\nGaN5s2XKy6YCauCt4tNQd7u7Kl9fvsJM2canddkvDwEYUp4j0S+W30aa7IjUBXDG\nF4VQQvXvQSLSTM4yq+P/+XneB3bd5iQVnDuw090zM6yXoCxvB2oPbsY2UHy1oDVV\nOOyva2xPl4Ku0/GmWgpPosZValGpLiNbcPqXPUTGVkdkd7XPqpgiCK+MSGcaGdm/\nGwgHtKrPAgMBAAECggEAK6RtjdrD2YC/IPz+A1D9UBLc6X9FUjvMKTwgedXfhNjd\nMame3KhtZhzBNdwUpslHlvw9Xmuk6jD363H3o2ZyPEP9Z0A5p8KqEUoeYNf1L2/N\nBt+BleI1ZSSY0fLVhYkryUoMfc3zUPfXMZzj9hrVBXwymQ1jtYIPyjXry0sCDzS7\n7WMBxpNpOTPe81Bb3JRIh/BSY0DomwNjoQokxYA7kVUBpjg6OZxsRsD4SqztYFhf\npXIUFldtQKQ8ayKRJHbrlOnGfGrRNcfdUnlbKlHjQCfnJVVr4358irYT4KQTqMoF\ncYQCzx9C0tFNSoIt6p17Uu1S4MRcCIrzwNyj2Uf5gQKBgQDohn1ZVomun1abGigR\ntL2qNPMivZDB+A/Elg1uPj0haDDf9pDPI6V5SxU1l4hV5lHzvHezONe5dH6bi0Vk\nvOJs8M1qKM9LMlyNtn8y09D9PI8/ie6K3OmI55bSaBQ8mDK/xxnFiOtrHqMzEhZX\nLvkFpVt7wNfPsdgq4lsfoMvTDwKBgQDkw5KUwFuNgmcHn6ogeWn7B1W22grlrWjD\nVYS1pISvZUwz2HtlxyHVC8uH2R5J4J14KHVjBfhj8ZA93L6ItEg2WTUANnhdyIC6\ndBFidCkpf7JoptQ7RPWvMNYs5c4SAAuVWyTIRj4Gn5HmEoZoox9gFEGGLoGhfTd3\noUjsg3qsQQKBgCP0l/F2ljewX93//24tep6VLXuTwIyd5SJK6azAZweBav1WzTGa\nm33UBGWTFvvhb4629/N4uLLutp0qvgJDyud5nOnrgZJpKTKoo6aiZlCiSqxSkdZb\nLqmC1imW+nocNsy85tlKwMyBok7FXzsAAnXDChBq03REVd7bvad4X8w1AoGBAJH7\nD2XnHkU+KrsdszXH5M5xDsyBdaS9NPY5c1dqZdV7YdZP1ebL3RYT0cydy4s/T51m\nzAnlvG0isHYZkGiyCsbLxFufZs4J7cON364hDEdUGqhXlWVBCzrBglriRs8LwliL\n8fvvfxNA7pyPw7+wIIxyQKH8uXIw8p1fiaaL/FNBAoGAYGaPhURDTPg1kwOzaHXm\n/9IeYTuDBxnfQgxRNLzb2nFe7Uoc3X0eC2yMsQgXLofitps+oG9iLgd/vl6e5VAY\nwc0Yo+ZRRzhNGG49jJ7V59gB9SK5+XSNnqR+XrJS/hn27lgOCDC/zrVYyaHjAXba\nO+eDzSQ9TrOfLOhn+evVNeA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloud-exam@cloud-exam-29497.iam.gserviceaccount.com",
+  "client_id": "103102857103558611950",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloud-exam%40cloud-exam-29497.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
